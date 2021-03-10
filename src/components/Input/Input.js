@@ -1,15 +1,14 @@
-import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function Input({ labelText, placeholder, name }) {
   return (
-    <Label className="Input">
+    <Label>
       {labelText}
       <Textarea
         name={name}
         placeholder={placeholder}
         type="text"
-        maxLength="75"
+        maxlength="75"
       />
     </Label>
   )
