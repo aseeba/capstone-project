@@ -19,5 +19,4 @@ const Heading = styled.h2`
   font-size: 1.4em;
   text-align: center;
   color: var(--color-darkgreen);
-  margin-bottom: 30px;
 `

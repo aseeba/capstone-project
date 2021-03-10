@@ -33,6 +33,6 @@ const Textarea = styled.textarea`
   }
   text-align: center;
   font-size: 0.8em;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   opacity: 0.5;
 `
