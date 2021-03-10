@@ -22,16 +22,17 @@ const Label = styled.label`
   text-align: center;
 `
 const Textarea = styled.textarea`
-  border: solid 1px;
+  border: solid 1px var(--color-green);
   border-radius: 8px;
   padding: 15px;
-  background-color: var(--color-gradient-green);
-  color: white;
+  background-color: white;
+  color: var(--color-darkgreen);
   ::placeholder {
     color: var(--color-darkgreen);
+    text-align: center;
   }
   text-align: center;
   font-size: 0.8em;
   margin-bottom: 25px;
-  opacity: 0.7;
+  opacity: 0.5;
 `
