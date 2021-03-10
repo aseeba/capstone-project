@@ -4,12 +4,14 @@ export default createGlobalStyle`
   * {
     box-sizing: border-box
   }
+
   body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 112.5%;
     line-height: 1.5;
   }
+
   input, button, textarea {
     font-family: inherit;
     font-size: inherit;
@@ -17,9 +19,10 @@ export default createGlobalStyle`
     &:focus {
       outline: none;
       border-color: transparent;
-      box-shadow: 0 0 4px 1px plum;
+      box-shadow: 0 0 4px 1px #6ddb03;
     }
   }
+
   input, textarea {
     border: 2px solid #ddd;
     padding: 4px;
