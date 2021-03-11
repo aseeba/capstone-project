@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-export default function Input({ labelText, placeholder, name }) {
+export default function Input({ labelText, placeholder, name, autofocus }) {
   return (
     <Label>
       {labelText}
@@ -8,7 +8,9 @@ export default function Input({ labelText, placeholder, name }) {
         name={name}
         placeholder={placeholder}
         type="text"
-        maxlength="75"
+        maxLength="85"
+        autofocus="autofocus"
+        required="required"
       />
     </Label>
   )

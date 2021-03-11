@@ -28,13 +28,12 @@ export default createGlobalStyle`
     width: 100%;
     &:focus {
       outline: none;
-      border-color: transparent;
+      border-color: 2px var(--color-darkgreen);
       box-shadow: 0 0 8px 2px var(--color-darkgreen);
     }
   }
 
   input, textarea {
-    border: 2px solid #ddd;
     padding: 4px;
   }
   button {
