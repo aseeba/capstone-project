@@ -8,17 +8,20 @@ export default function MealForm() {
         labelText="Frühstück:"
         name="Breakfast"
         placeholder="Was möchte ich zum Frühstück essen?"
-        autofocus="autofocus"
+        required="required"
+        autoFocus={true}
       />
       <Input
         labelText="Mittagessen:"
         name="Lunch"
         placeholder="Was möchte ich zum Mittag essen?"
+        required="required"
       />
       <Input
         labelText="Abendessen:"
         name="Dinner"
         placeholder="Was möchte ich zu Abend essen?"
+        required="required"
       />
       <Input
         labelText="Zwischenmahlzeit:"

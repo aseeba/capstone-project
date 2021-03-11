@@ -15,11 +15,13 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0;
+    margin: 0 auto;
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-size: 112.5%;
     line-height: 1.5;
     background: var(--color-gradient-green);
+    
   }
 
   input, button, textarea {

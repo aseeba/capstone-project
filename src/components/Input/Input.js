@@ -1,15 +1,21 @@
 import styled from 'styled-components/macro'
 
-export default function Input({ labelText, placeholder, name, autofocus }) {
+export default function Input({
+  labelText,
+  placeholder,
+  name,
+  autoFocus,
+  required,
+}) {
   return (
     <Label>
       {labelText}
-      <Textarea
+      <InputStyled
         name={name}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         type="text"
         maxLength="85"
-        autofocus="autofocus"
         required="required"
       />
     </Label>
@@ -22,7 +28,7 @@ const Label = styled.label`
   color: white;
   text-align: center;
 `
-const Textarea = styled.textarea`
+const InputStyled = styled.input`
   border: solid 1px var(--color-green);
   border-radius: 8px;
   padding: 15px;

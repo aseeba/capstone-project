@@ -15,8 +15,10 @@ const AppLayout = styled.div`
   padding: 20px;
   height: auto;
 `
-const Heading = styled.h2`
+const Heading = styled.h1`
   font-size: 1.4em;
   text-align: center;
   color: var(--color-darkgreen);
+  margin-top: 35px;
+  margin-bottom: 35px;
 `
