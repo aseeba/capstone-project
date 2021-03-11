@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
@@ -43,8 +42,10 @@
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
+    "@storybook/addon-viewport": "^6.1.21",
     "@storybook/node-logger": "^6.1.21",
     "@storybook/preset-create-react-app": "^3.1.6",
-    "@storybook/react": "^6.1.21"
+    "@storybook/react": "^6.1.21",
+    "@testing-library/react": "^11.2.5"
   }
 }
