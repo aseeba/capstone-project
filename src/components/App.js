@@ -1,13 +1,20 @@
+import { useState } from 'react'
 import styled from 'styled-components/macro'
 import MealForm from './MealForm/MealForm'
 
 export default function App() {
+  const [nameOfMeal, setNameOfMeal] = useState([])
+
   return (
     <AppLayout>
       <Heading>Was esse ich morgen?</Heading>
-      <MealForm />
+      <MealForm onCreateMeal={createMeal} />
     </AppLayout>
   )
+
+  function createMeal({ breakfast, lunch, dinner, snack }) {
+    setNameOfMeal(nameOfMeal)
+  }
 }
 
 const AppLayout = styled.div`
@@ -19,6 +26,5 @@ const Heading = styled.h1`
   font-size: 1.4em;
   text-align: center;
   color: var(--color-darkgreen);
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 `
