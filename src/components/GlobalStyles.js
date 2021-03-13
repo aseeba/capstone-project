@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   :root {
+    --color-yellow-green: rgb(219,242,93);
     --color-limegreen: rgb(119,172,40);
     --color-green: rgba(164,199,67);
     --color-darkgreen: rgba(79,115,27);
@@ -25,10 +26,9 @@ export default createGlobalStyle`
     
   }
 
-  input, button, textarea {
+  input, textarea, button {
     font-family: inherit;
     font-size: inherit;
-    width: 100%;
     &:focus {
       outline: none;
       border-color: 1px var(--color-darkgreen);

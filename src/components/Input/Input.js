@@ -33,7 +33,7 @@ const InputStyled = styled.input`
   border: none;
   border-radius: 30px;
   padding: 10px;
-  background: var(--color-transparent-white);
+  background-color: var(--color-transparent-white);
   color: var(--color-darkgreen);
   ::placeholder {
     color: var(--color-darkgreen);

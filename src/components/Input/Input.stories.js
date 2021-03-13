@@ -5,11 +5,11 @@ export default {
   component: Input,
 }
 
-export const base = () => (
+export const InputField = () => (
   <Input
-    labelText="Frühstück:"
+    labelText="labelText:"
     name="Breakfast"
-    placeholder="Was möchte ich zum Frühstück essen?"
+    placeholder="Input field with placeholder text"
     autofocus="autofocus"
     required="required"
   />

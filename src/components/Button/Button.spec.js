@@ -2,12 +2,12 @@ import { render } from '@testing-library/react'
 import Button from './Button'
 
 describe('Button', () => {
-  it('shows a different color when isActive is true', () => {
+  it('shows a different font-size when isActive is true', () => {
     const { rerender, container } = render(<Button>Test</Button>)
-    const defaultColor = getComputedStyle(container.firstChild).backgroundColor
+    const defaultFontSize = getComputedStyle(container.firstChild).fontSize
     rerender(<Button isActive>Test</Button>)
-    const otherColor = getComputedStyle(container.firstChild).backgroundColor
+    const otherFontSize = getComputedStyle(container.firstChild).fontSize
 
-    expect(defaultColor).not.toBe(otherColor)
+    expect(defaultFontSize).not.toBe(otherFontSize)
   })
 })

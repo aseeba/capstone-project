@@ -3,7 +3,7 @@ import React from 'react'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 
-export default function MealForm({ onCreateMeal }) {
+export default function MealForm({ onPlanMeal }) {
   return (
     <MealFormWrapper onSubmit={handleSubmit}>
       <Input
@@ -39,7 +39,7 @@ export default function MealForm({ onCreateMeal }) {
     const form = event.target
     const { breakfast, lunch, dinner, snack } = form.elements
 
-    onCreateMeal({
+    onPlanMeal({
       breakfast: breakfast.value,
       lunch: lunch.value,
       dinner: dinner.value,
