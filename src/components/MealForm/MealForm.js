@@ -3,27 +3,24 @@ import React from 'react'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 
-export default function MealForm({ onPlanMeal }) {
+export default function MealForm(onPlanMeal) {
   return (
     <MealFormWrapper onSubmit={handleSubmit}>
       <Input
         labelText="Frühstück:"
         name="breakfast"
         placeholder="Was möchte ich zum Frühstück essen?"
-        required="required"
         autoFocus={true}
       />
       <Input
         labelText="Mittagessen:"
         name="lunch"
         placeholder="Was möchte ich zum Mittag essen?"
-        required="required"
       />
       <Input
         labelText="Abendessen:"
         name="dinner"
         placeholder="Was möchte ich zu Abend essen?"
-        required="required"
       />
       <Input
         labelText="Zwischenmahlzeit:"

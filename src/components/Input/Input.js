@@ -16,7 +16,6 @@ export default function Input({
         autoFocus={autoFocus}
         type="text"
         maxLength="85"
-        required="required"
       />
     </Label>
   )

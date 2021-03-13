@@ -4,8 +4,8 @@ import MealForm from './MealForm/MealForm'
 import Button from './Button/Button'
 
 export default function App() {
-  const [nameOfMeal, setNameOfMeal] = useState([])
-  const [currentPage, setCurrentPage] = useState('PlanPage')
+  const [meals, setMeals] = useState([])
+  const [currentPage, setCurrentPage] = useState('PlanMealsPage')
 
   return (
     <AppLayout>
@@ -19,15 +19,18 @@ export default function App() {
       {currentPage === 'TomorrowMealsPage' && (
         <div>
           <Heading>Morgen esse ich:</Heading>
+
           <Button onClick={backToPlanPage}>Neuer Tag</Button>
         </div>
       )}
     </AppLayout>
   )
 
-  function planMeal({ breakfast, lunch, dinner, snack }) {
-    setNameOfMeal(nameOfMeal)
+  function planMeal(newMeal) {
+    setMeals([...meals, newMeal])
+    // setPlayers(playerNames.map(name => ({ name, score: 0 })))
   }
+
   function backToPlanPage() {
     setCurrentPage('PlanPage')
   }
