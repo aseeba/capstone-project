@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components/macro'
 import MealForm from './MealForm/MealForm'
 import Button from './Button/Button'
+import MealEntry from './MealsEntry/MealsEntry'
 
 export default function App() {
   const [meals, setMeals] = useState([])
@@ -12,27 +13,26 @@ export default function App() {
       {currentPage === 'PlanMealsPage' && (
         <div>
           <Heading>Was esse ich morgen?</Heading>
-          <MealForm onPlanMeal={planMeal} />
+          <MealForm onPlanMeal={planMeal} onNavigate={setCurrentPage} />
         </div>
       )}
 
-      {currentPage === 'TomorrowMealsPage' && (
-        <div>
+      {currentPage === 'NextMealsPage' && (
+        <NextMealsWrapper>
           <Heading>Morgen esse ich:</Heading>
-
+          <MealEntry />
           <Button onClick={backToPlanPage}>Neuer Tag</Button>
-        </div>
+        </NextMealsWrapper>
       )}
     </AppLayout>
   )
 
   function planMeal(newMeal) {
     setMeals([...meals, newMeal])
-    // setPlayers(playerNames.map(name => ({ name, score: 0 })))
   }
 
   function backToPlanPage() {
-    setCurrentPage('PlanPage')
+    setCurrentPage('PlanMealsPage')
   }
 }
 
@@ -46,4 +46,8 @@ const Heading = styled.h1`
   text-align: center;
   color: var(--color-darkgreen);
   margin-bottom: 30px;
+`
+const NextMealsWrapper = styled.div`
+  display: grid;
+  gap: 10px;
 `

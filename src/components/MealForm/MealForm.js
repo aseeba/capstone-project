@@ -3,7 +3,7 @@ import React from 'react'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 
-export default function MealForm(onPlanMeal) {
+export default function MealForm({ onPlanMeal, onNavigate }) {
   return (
     <MealFormWrapper onSubmit={handleSubmit}>
       <Input
@@ -27,7 +27,9 @@ export default function MealForm(onPlanMeal) {
         name="snack"
         placeholder="Was möchte ich snacken?"
       />
-      <Button>&#10003; Speichern</Button>
+      <Button onClick={() => onNavigate('NextMealsPage')}>
+        &#10003; Speichern
+      </Button>
     </MealFormWrapper>
   )
 
