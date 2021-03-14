@@ -5,7 +5,7 @@ import Button from './Button/Button'
 import MealEntry from './MealsEntry/MealsEntry'
 
 export default function App() {
-  const [meals, setMeals] = useState([])
+  const [mealList, setMealList] = useState([])
   const [currentPage, setCurrentPage] = useState('PlanMealsPage')
 
   return (
@@ -27,8 +27,9 @@ export default function App() {
     </AppLayout>
   )
 
-  function planMeal(newMeal) {
-    setMeals([...meals, newMeal])
+  function planMeal(newMeals) {
+    setMealList([...mealList, newMeals])
+    console.log(newMeals)
   }
 
   function backToPlanPage() {

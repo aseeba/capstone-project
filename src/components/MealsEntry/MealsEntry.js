@@ -1,23 +1,25 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function MealEntry({ meals }) {
+export default function MealEntry({ mealList, newMeal }) {
   return (
     <MealEntryWrapper>
       <MealOverview>
         <Description>
-          Frühstück:
-          <Meal>Frühstück mit ganz viel leckerem Firlefanz</Meal>
+          Frühstück:<Meal>Bananen-Mango-Porridge aus Bulgur</Meal>
         </Description>
         <Description>
-          Mittagessen:
-          <Meal>Mittagessen mit Nachtisch</Meal>
+          Mittagessen:<Meal>Brokkoli-Puten-Salat mit Feta</Meal>
         </Description>
         <Description>
-          Abendessen:<Meal>Von allem ein bisschen was</Meal>
+          Abendessen:<Meal>Omelette-Wraps mit Räucherlachs</Meal>
         </Description>
         <Description>
-          Snack:<Meal>Kleinigkeit</Meal>
+          Snack:
+          <Meal>
+            80 Zeichen: Lorem ipsum dolor sit amet, consectetuer adipiscing
+            elit. Aenean co.
+          </Meal>
         </Description>
       </MealOverview>
     </MealEntryWrapper>
@@ -33,7 +35,8 @@ const MealOverview = styled.ul`
   margin: 0 0 20px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
+  vertical-align: middle;
 `
 
 const Meal = styled.li`

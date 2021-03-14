@@ -10,12 +10,12 @@ export default function Input({
   return (
     <Label>
       {labelText}
-      <InputStyled
+      <MealInput
         name={name}
         placeholder={placeholder}
         autoFocus={autoFocus}
         type="text"
-        maxLength="85"
+        maxLength="80"
       />
     </Label>
   )
@@ -27,7 +27,7 @@ const Label = styled.label`
   color: white;
   text-align: center;
 `
-const InputStyled = styled.input`
+const MealInput = styled.input`
   margin-bottom: 20px;
   border: none;
   border-radius: 30px;
