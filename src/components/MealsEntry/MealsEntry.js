@@ -1,26 +1,26 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function MealEntry({ mealList, newMeal }) {
+export default function MealEntry({ mealList }) {
   return (
     <MealEntryWrapper>
       <MealOverview>
-        <Description>
-          Frühstück:<Meal>Bananen-Mango-Porridge aus Bulgur</Meal>
-        </Description>
-        <Description>
-          Mittagessen:<Meal>Brokkoli-Puten-Salat mit Feta</Meal>
-        </Description>
-        <Description>
-          Abendessen:<Meal>Omelette-Wraps mit Räucherlachs</Meal>
-        </Description>
-        <Description>
+        <MealDescr>
+          Frühstück:
+          <Meal>{mealList.breakfast}</Meal>
+        </MealDescr>
+        <MealDescr>
+          Mittagessen:
+          <Meal>{mealList.lunch}</Meal>
+        </MealDescr>
+        <MealDescr>
+          Abendessen:
+          <Meal>{mealList.dinner}</Meal>
+        </MealDescr>
+        <MealDescr>
           Snack:
-          <Meal>
-            80 Zeichen: Lorem ipsum dolor sit amet, consectetuer adipiscing
-            elit. Aenean co.
-          </Meal>
-        </Description>
+          <Meal>{mealList.snack}</Meal>
+        </MealDescr>
       </MealOverview>
     </MealEntryWrapper>
   )
@@ -54,7 +54,7 @@ const Meal = styled.li`
   vertical-align: middle;
   hyphens: auto;
 `
-const Description = styled.span`
+const MealDescr = styled.span`
   font-weight: 400;
   text-align: center;
   color: white;
