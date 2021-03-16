@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import MealForm from './MealForm/MealForm'
 import Button from './Button/Button'
 import MealEntry from './MealsEntry/MealsEntry'
 
+import loadFromLocal from '../lib/LoadFromLocal'
+import saveToLocal from '../lib/saveToLocal'
+
 export default function App() {
-  const [mealList, setMealList] = useState({})
+  const [mealList, setMealList] = useState(loadFromLocal('mealList') ?? {})
   const [currentPage, setCurrentPage] = useState('PlanMealsPage')
+
+  useEffect(() => {
+    saveToLocal('mealList', mealList)
+  }, [mealList])
 
   return (
     <AppLayout>

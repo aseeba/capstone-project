@@ -27,9 +27,7 @@ export default function MealForm({ onPlanMeal, onNavigate }) {
         name="snack"
         placeholder="Was möchte ich snacken?"
       />
-      <Button onClick={() => onNavigate('NextMealsPage')}>
-        &#10003; Speichern
-      </Button>
+      <Button>&#10003; Speichern</Button>
     </MealFormWrapper>
   )
 
@@ -46,6 +44,7 @@ export default function MealForm({ onPlanMeal, onNavigate }) {
     })
     form.reset()
     breakfast.focus()
+    onNavigate('NextMealsPage')
   }
 }
 
