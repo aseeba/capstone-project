@@ -12,7 +12,7 @@ export default styled.button`
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: ${props => (props.isActive ? '1em' : '0.8em')};
   font-family: inherit;
   font-weight: 600;
 `

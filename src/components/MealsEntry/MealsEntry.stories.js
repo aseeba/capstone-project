@@ -3,18 +3,26 @@ import MealEntry from './MealsEntry'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'MealEntry',
+  title: 'Capstone Project/MealEntry',
   component: MealEntry,
   argTypes: {
     authorColor: { control: 'color' },
   },
 }
 
-const Template = args => <MealEntry {...args} />
+const Template = args => (
+  <MealEntry
+    {...args}
+    mealList={{
+      breakfast: 'Smoothie',
+      lunch: 'Salmon wrap',
+      dinner: 'Scrambled eggs',
+      snack: 'Apple',
+    }}
+  />
+)
 
-export const Primary = Template.blind({})
-
-Primary.args = {
-  authorColor: '',
-  text: 'This is an example for a meal entry',
+export const MealEntryGroup = Template.bind({})
+MealEntryGroup.args = {
+  Text: 'Add a meal here',
 }

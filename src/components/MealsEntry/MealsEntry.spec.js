@@ -1,16 +1,16 @@
 import { render, screen } from '@testing-library/react'
-import MealsEntry from './MealsEntry'
+import MealEntry from './MealsEntry'
 
-describe('MealsEntry', () => {
+describe('MealEntry', () => {
   it('renders meal data from props', () => {
-    const { container } = render(
-      <MealsEntry
-        mealList {
-          breakfast: "Smoothie", 
-          lunch: "Salmon wrap", 
-          dinner: "Scrambled eggs", 
-          snack: "Apple"
-        }
+    render(
+      <MealEntry
+        mealList={{
+          breakfast: 'Smoothie',
+          lunch: 'Salmon wrap',
+          dinner: 'Scrambled eggs',
+          snack: 'Apple',
+        }}
       />
     )
     expect(screen.getByText('Smoothie')).toBeInTheDocument()
