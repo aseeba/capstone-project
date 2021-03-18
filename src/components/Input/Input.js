@@ -5,18 +5,19 @@ export default function Input({
   placeholder,
   name,
   autoFocus,
-  required,
+  mealListValue,
+  handleValueChange,
 }) {
   return (
-    <Label>
+    <Label htmlfor="">
       {labelText}
-      <InputStyled
+      <MealInput
         name={name}
         placeholder={placeholder}
         autoFocus={autoFocus}
         type="text"
-        maxLength="85"
-        required="required"
+        maxLength="80"
+        value={mealListValue}
       />
     </Label>
   )
@@ -28,18 +29,18 @@ const Label = styled.label`
   color: white;
   text-align: center;
 `
-const InputStyled = styled.input`
-  border: solid 1px var(--color-green);
-  border-radius: 8px;
-  padding: 15px;
-  background-color: white;
+const MealInput = styled.input`
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: var(--color-transparent-white);
   color: var(--color-darkgreen);
   ::placeholder {
     color: var(--color-darkgreen);
     text-align: center;
+    font-size: 0.8em;
   }
   text-align: center;
   font-size: 0.8em;
-  margin-bottom: 20px;
-  opacity: 0.5;
 `
