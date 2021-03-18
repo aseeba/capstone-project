@@ -1,6 +1,13 @@
 import styled from 'styled-components/macro'
 
-export default function Input({ labelText, placeholder, name, autoFocus }) {
+export default function Input({
+  labelText,
+  placeholder,
+  name,
+  autoFocus,
+  mealListValue,
+  handleValueChange,
+}) {
   return (
     <Label htmlfor="">
       {labelText}
@@ -10,6 +17,7 @@ export default function Input({ labelText, placeholder, name, autoFocus }) {
         autoFocus={autoFocus}
         type="text"
         maxLength="80"
+        value={mealListValue}
       />
     </Label>
   )

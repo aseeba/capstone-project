@@ -11,9 +11,5 @@ const Template = args => <Button {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
   buttonText: 'Primary Button',
-}
-
-export const Secondary = Template.bind({})
-Secondary.args = {
-  buttonText: '&#10003; Secondary Button',
+  isActive: false,
 }

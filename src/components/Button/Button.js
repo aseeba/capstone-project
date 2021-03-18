@@ -12,7 +12,12 @@ export default styled.button`
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  font-size: ${props => (props.isActive ? '1em' : '0.8em')};
+  font-size: ${props => (props.isActive ? '0.8em' : 'em')};
   font-family: inherit;
   font-weight: 600;
+
+  &.active {
+    border-color: 1px var(--color-darkgreen);
+    box-shadow: 0 0 5px 1px var(--color-darkgreen);
+  }
 `
