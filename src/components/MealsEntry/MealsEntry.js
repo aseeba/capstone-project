@@ -53,10 +53,10 @@ const Meal = styled.li`
   text-align: center;
   vertical-align: middle;
   hyphens: auto;
-  -ms-word-break: break-all;
+  /* -ms-word-break: break-all;
   word-break: break-all;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
+  -moz-hyphens: auto; */
 `
 const MealDescr = styled.span`
   font-weight: 400;
