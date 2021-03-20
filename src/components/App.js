@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
-import MealForm from './MealForm/MealForm'
 import Button from './Button/Button'
+import MealForm from './MealForm/MealForm'
 import MealEntry from './MealsEntry/MealsEntry'
+import Date from './DatePicker/DatePicker'
 
 import loadFromLocal from '../lib/LoadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
@@ -18,15 +19,15 @@ export default function App() {
   return (
     <AppLayout>
       {currentPage === 'PlanMealsPage' && (
-        <div>
-          <Heading>Was esse ich morgen?</Heading>
+        <PlanMealsWrapper>
+          <Heading>Was möchte ich essen?</Heading>
           <MealForm onPlanMeal={planMeal} onNavigate={setCurrentPage} />
-        </div>
+        </PlanMealsWrapper>
       )}
 
       {currentPage === 'NextMealsPage' && (
         <NextMealsWrapper>
-          <Heading>Morgen esse ich:</Heading>
+          <Heading>Mein Tagesplan</Heading>
           <MealEntry mealList={mealList} />
           <Button onClick={backToPlanPage}>Neuer Tag</Button>
         </NextMealsWrapper>
@@ -49,12 +50,19 @@ const AppLayout = styled.div`
   height: auto;
 `
 const Heading = styled.h1`
-  font-size: 1.4em;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+
   text-align: center;
-  color: var(--color-darkgreen);
-  margin-bottom: 30px;
+  color: white;
+  margin: 10px 20px;
 `
 const NextMealsWrapper = styled.div`
+  display: grid;
+  gap: 10px;
+`
+const PlanMealsWrapper = styled.div`
   display: grid;
   gap: 10px;
 `
