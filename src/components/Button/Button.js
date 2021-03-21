@@ -1,25 +1,27 @@
 import styled from 'styled-components/macro'
 
+// export default function Button({ buttonText, isActive={false} }) {}
+
 export default styled.button`
-  margin-top: 20px;
-  padding: 15px 45px;
+  padding: 10px 15px;
   border-radius: 8px;
   background-color: var(--color-green);
   border: none;
-  box-shadow: 0 0 10px 1px var(--color-dark-green);
+  box-shadow: var(--box-shadow);
   color: white;
   font-weight: ${props => (props.isActive ? '600' : '400')};
   text-decoration: none;
   text-align: center;
+  vertical-align: middle;
   text-transform: uppercase;
   font-size: ${props => (props.isActive ? '0.9em' : '0.8em')};
   font-family: inherit;
   font-weight: 600;
-
+  margin-top: 20px;
   &.active {
     outline: none;
     border: 1px var(--color-darkgreen);
-    box-shadow: 0 0 5px 1px var(--color-dark-green);
+    box-shadow: var(--box-shadow);
 
     &.disabled {
     }

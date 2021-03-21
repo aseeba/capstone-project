@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import DishSvg from '@fortawesome/fontawesome-free/svgs/solid/utensils.svg'
 
 export default function MealEntry({ mealList }) {
   return (
@@ -28,12 +27,14 @@ export default function MealEntry({ mealList }) {
 }
 
 const MealEntryWrapper = styled.section`
+  display: grid;
   align-items: center;
   width: 100%;
+  margin-top: 30px;
 `
 const MealGroup = styled.ul`
   padding-left: 0;
-  margin: 20px 0 20px 0;
+  margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -48,9 +49,9 @@ const Meal = styled.li`
   padding: 10px 20px;
   background-color: var(--color-transparent-white);
   border-radius: 20px;
-  border: 1px solid var(--color-green);
+  border-bottom: var(--border-bottom);
   font-family: inherit;
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 600;
   color: var(--color-dark-bluegrey);
   text-align: center;
@@ -58,7 +59,8 @@ const Meal = styled.li`
   hyphens: auto;
 `
 const MealDescr = styled.span`
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
   color: white;
+  font-size: 0.9em;
 `

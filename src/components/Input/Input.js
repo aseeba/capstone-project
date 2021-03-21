@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro'
-import date from '../DatePicker/DatePicker'
 
 export default function Input({
   labelText,
@@ -28,7 +27,7 @@ const Label = styled.label`
   color: white;
   height: 100%;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.7em;
   z-index: 100;
 `
 const MealInput = styled.input`
@@ -39,10 +38,12 @@ const MealInput = styled.input`
   color: var(--color-dark-bluegrey);
   border-bottom: 3px solid var(--color-green);
   outline: none;
+  text-align: center;
+  z-index: 0;
   ::placeholder {
     color: var(--color-dark-bluegrey);
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.9em;
     opacity: 0.6;
   }
   &:focus {
@@ -50,6 +51,4 @@ const MealInput = styled.input`
     border-bottom: var(--border-bottom);
     box-shadow: var(--box-shadow);
   }
-  text-align: center;
-  z-index: 0;
 `

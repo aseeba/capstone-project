@@ -1,33 +1,40 @@
 import styled from 'styled-components/macro'
 import Calendar from '../../assets/calendar.svg'
 
-export default function Date({ labelText, autoFocus }) {
+export default function Date({
+  labelText,
+  name,
+  autoFocus,
+  required,
+  placeholder,
+}) {
   return (
     <DateWrapper>
       <Label>
         {labelText}
         <CalendarIcon />
-        <ReqMark>!</ReqMark>
         <DateInput
           type="date"
-          placeholder="Wähle ein Datum"
+          placeholder={placeholder}
+          name={name}
           autoFocus={autoFocus}
-          required
+          required={required}
         ></DateInput>
       </Label>
     </DateWrapper>
   )
 }
 
-const DateWrapper = styled.div`
+const DateWrapper = styled.section`
   display: grid;
+  margin: 20px 0 0 0;
 `
 const Label = styled.label`
   position: relative;
   display: grid;
   color: white;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-bottom: 0;
 `
 const DateInput = styled.input`
@@ -43,30 +50,16 @@ const DateInput = styled.input`
   ::placeholder {
     color: var(--color-dark-bluegrey);
     text-align: center;
-    font-size: 0.8em;
     opacity: 0.6;
   }
   &:focus {
     outline: none;
-    border-bottom: 5px solid var(--color-green);
+    border-bottom: var(--border-bottom);
+    box-shadow: var(--box-shadow);
   }
   text-align: center;
   font-size: 1em;
   z-index: 100;
-`
-
-const ReqMark = styled.span`
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  right: 20px;
-  bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 22px;
-  color: darkred;
-  z-index: 200;
 `
 
 const CalendarIcon = styled.span`
@@ -77,7 +70,7 @@ const CalendarIcon = styled.span`
   width: 30px;
   height: 20px;
   pointer-events: none;
-  top: 35px;
+  top: 30px;
   left: 10px;
   z-index: 200;
 `

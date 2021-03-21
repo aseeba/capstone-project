@@ -7,15 +7,16 @@ export default createGlobalStyle`
     --color-bluegreen: rgb(17,153,142);
     --color-dark-bluegreen: rgb(16,120,111);
     --color-dark-bluegrey: rgb(9,73,67);
+    --color-light-bluegrey: rgba(9,73,67,0.2);
     --color-gradient-green: linear-gradient(to bottom right, 
       var(--color-bluegreen) 0%, var(--color-green) 100%);
     --color-webkit-gradient-green: -webkit-linear-gradient(top left, 
     var(--color-bluegreen) 0%, var(--color-green) 100%);
-    --color-transparent-white: rgba(255,255,255,0.35);
+    --color-transparent-white: rgba(255,255,255,0.4);
 
-    --box-shadow: 0 0 8px 1px var(--color-darkgreen);
+    --box-shadow: 0 0 10px 1px var(--color-light-bluegrey);
     --border-bottom: 5px solid var(--color-green);
-
+    --section-margin: 30px 0 30px 0;
 
     /* Color-Setup-Green:
     --color-yellow-green: rgb(219,242,93);

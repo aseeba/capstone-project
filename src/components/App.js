@@ -3,13 +3,13 @@ import styled from 'styled-components/macro'
 import Button from './Button/Button'
 import MealForm from './MealForm/MealForm'
 import MealEntry from './MealsEntry/MealsEntry'
-import Date from './DatePicker/DatePicker'
+import DateEntry from './DateEntry/DateEntry'
 
 import loadFromLocal from '../lib/LoadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
 
 export default function App() {
-  const [mealList, setMealList] = useState(loadFromLocal('mealList') ?? {})
+  const [mealList, setMealList] = useState(loadFromLocal('mealList') ?? [])
   const [currentPage, setCurrentPage] = useState('PlanMealsPage')
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function App() {
       {currentPage === 'NextMealsPage' && (
         <NextMealsWrapper>
           <Heading>Mein Tagesplan</Heading>
+          <DateEntry mealList={mealList} />
           <MealEntry mealList={mealList} />
           <Button onClick={backToPlanPage}>Neuer Tag</Button>
         </NextMealsWrapper>
@@ -53,10 +54,9 @@ const Heading = styled.h1`
   font-size: 1.2em;
   font-weight: 600;
   text-transform: uppercase;
-
   text-align: center;
   color: white;
-  margin: 10px 20px;
+  margin: 0;
 `
 const NextMealsWrapper = styled.div`
   display: grid;

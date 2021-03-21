@@ -7,24 +7,30 @@ import Button from '../Button/Button'
 
 export default function MealForm({ onPlanMeal, onNavigate }) {
   const [mealListValue, setmealListValue] = useState('')
+
   const handleValueChange = event => {
     setmealListValue(event.target.value)
   }
 
   return (
     <CreateDaily>
-      <Date labelText="Datum:" autoFocus={true}></Date>
-      <MealFormWrapper onSubmit={handleSubmit} onChange={handleValueChange}>
+      <MealFormWrapper onChange={handleValueChange} onSubmit={handleSubmit}>
+        <Date
+          labelText="Datum:"
+          name="date"
+          placeholder="Wähle einen Tag aus"
+          autoFocus={true}
+        />
         <Input
           labelText="Frühstück:"
           name="breakfast"
           placeholder="z. B. Himbeer-Kokos-Smoothie"
         />
-        <PeekyPlaceholder>Bspw. Kokos-Himbeer-Smoothie</PeekyPlaceholder>
         <Input
           labelText="Mittagessen:"
           name="lunch"
-          placeholder="z. B. Chicken-Fajita-Pfanne"
+          placeholder="z. B.
+          Chicken-Fajita-Pfanne"
         />
         <Input
           labelText="Abendessen:"
@@ -36,43 +42,39 @@ export default function MealForm({ onPlanMeal, onNavigate }) {
           name="snack"
           placeholder="z. B. Joghurt"
         />
-        <Button disabled={!mealListValue}>&#10003; Speichern</Button>
+        <Button disabled={!mealListValue}>✔︎ &nbsp; Speichern</Button>
       </MealFormWrapper>
     </CreateDaily>
   )
 
-  function handleSubmit(event, date) {
+  function handleSubmit(event) {
     const form = event.target
-    const { breakfast, lunch, dinner, snack } = form.elements
+    const { breakfast, lunch, dinner, snack, date } = form.elements
     event.preventDefault()
 
     onPlanMeal({
+      date: date.value,
       breakfast: breakfast.value,
       lunch: lunch.value,
       dinner: dinner.value,
       snack: snack.value,
     })
     form.reset()
-    breakfast.focus()
+    date.focus()
     onNavigate('NextMealsPage')
 
     return form
   }
 }
 
+const CreateDaily = styled.section`
+  display: grid;
+`
+
 const MealFormWrapper = styled.form`
   display: grid;
   gap: 10px;
-`
-const PeekyPlaceholder = styled.span`
-  color: #35dc9b;
-  font: 13px Helvetica, Arial, sans-serif;
-  position: absolute;
-  top: 0px;
-  left: 20px;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-`
-const CreateDaily = styled.div`
-  display: grid;
+  &:last-child {
+    margin-bottom: 30px;
+  }
 `
