@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import Button from '../Button/Button'
 
-export default function DateEntry({ mealList }) {
+export default function DateEntry({ mealList, dailyPlan, showPlannedDays }) {
   return (
     <DateEntryWrapper>
-      <Button>◀︎</Button>
+      <Button onClick={showPlannedDays}>◀︎</Button>
       <Day>{mealList.date}</Day>
-      <Button>▶︎</Button>
+      <Button onClick={showPlannedDays}>▶︎</Button>
     </DateEntryWrapper>
   )
 }

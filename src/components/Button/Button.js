@@ -1,8 +1,6 @@
 import styled from 'styled-components/macro'
 
-// export default function Button({ buttonText, isActive={false} }) {}
-
-export default styled.button`
+const Button = styled.button`
   padding: 10px 15px;
   border-radius: 8px;
   background-color: var(--color-green);
@@ -27,3 +25,4 @@ export default styled.button`
     }
   }
 `
+export default Button

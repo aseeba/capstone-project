@@ -20,6 +20,7 @@ export default function MealForm({ onPlanMeal, onNavigate }) {
           name="date"
           placeholder="Wähle einen Tag aus"
           autoFocus={true}
+          required={true}
         />
         <Input
           labelText="Frühstück:"
