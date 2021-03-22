@@ -1,13 +1,34 @@
-import React from 'react'
 import styled from 'styled-components/macro'
 import Button from '../Button/Button'
 
-export default function DateEntry({ mealList, dailyPlan, showPlannedDays }) {
+export default function DateEntry({
+  mealList,
+  dailyPlan,
+  showPlannedDays,
+  setPlannedDayNumber,
+  plannedDayNumber,
+}) {
+  function forth() {
+    setPlannedDayNumber(prevState => prevState + 1)
+  }
+  function back() {
+    setPlannedDayNumber(prevState => prevState - 1)
+  }
   return (
     <DateEntryWrapper>
-      <Button onClick={showPlannedDays}>◀︎</Button>
-      <Day>{mealList.date}</Day>
-      <Button onClick={showPlannedDays}>▶︎</Button>
+      <Button onClick={plannedDayNumber > 0 ? back : undefined}>◀︎</Button>
+      {/*  weil *mealList* nun kein einfacher Array mehr ist,
+      sondern ein Array bestehend aus Objekten,
+      müssen wir uns hier zunächst für ein Objekt entscheiden,
+      das wir uns vornehmen und DAraus dann date entnehmen.
+      Das mache ich per *BracketNotation* und nehme einfach mal das älteste,
+      darum setze ich als Initial State 0. */}
+      <Day>{mealList[plannedDayNumber].date}</Day>
+      <Button
+        onClick={mealList.length > plannedDayNumber + 1 ? forth : undefined}
+      >
+        ▶︎
+      </Button>
     </DateEntryWrapper>
   )
 }

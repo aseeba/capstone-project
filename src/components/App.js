@@ -12,6 +12,7 @@ export default function App() {
   const [mealList, setMealList] = useState(loadFromLocal('mealList'), [])
   const [dailyPlan, setDailyPlan] = useState(loadFromLocal('dailyPlan'), [])
   const [currentPage, setCurrentPage] = useState('PlanMealsPage')
+  const [plannedDayNumber, setPlannedDayNumber] = useState(0)
 
   useEffect(() => {
     saveToLocal('mealList', mealList)
@@ -29,16 +30,23 @@ export default function App() {
           <MealForm onPlanMeal={planMeal} onNavigate={setCurrentPage} />
         </PlanMealsWrapper>
       )}
-
       {currentPage === 'NextMealsPage' && (
         <NextMealsWrapper>
           <Heading>Mein Tagesplan</Heading>
-          <DateEntry mealList={mealList} />
-          <MealEntry mealList={mealList} />
+          <DateEntry
+            mealList={mealList}
+            plannedDayNumber={plannedDayNumber}
+            setPlannedDayNumber={setPlannedDayNumber}
+          />
+          {/* Deine Compoent-Dateien heißen Meal*s*Entry, vielleicht magst du das noch anpassen? :) */}
+          <MealEntry
+            mealList={mealList}
+            plannedDayNumber={plannedDayNumber}
+            setPlannedDayNumber={setPlannedDayNumber}
+          />
           <Button onClick={backToPlanPage}> ★ &nbsp; Neuer Tag</Button>
         </NextMealsWrapper>
       )}
-
       {currentPage === 'PlannedDaysPage' && (
         <PlannedDaysWrapper>
           {dailyPlan.map(({ mealList }) => (
@@ -54,7 +62,13 @@ export default function App() {
   )
 
   function planMeal(newMeal) {
-    setMealList([{ ...mealList }, newMeal])
+    /* Ich frage ob *mealList* noch der leere Array vom Anfang (useState ganz oben) ist.
+    Wenn ja, soll nur ein neuer Array erstellt werden,
+    der als erstes und einziges Objekt *newMeal* hat.
+    Wenn schon Elemente in *mealList* vorhanden sind,
+    soll er die zuerst in das neue Array spreaden
+    und dann am Ende das Objekt aus *newMeal* einfügen */
+    setMealList(mealList ? [...mealList, newMeal] : [newMeal])
   }
 
   function backToPlanPage() {
