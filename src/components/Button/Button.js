@@ -20,7 +20,6 @@ const Button = styled.button`
     outline: none;
     border: 1px var(--color-darkgreen);
     box-shadow: var(--box-shadow);
-
     &.disabled {
     }
   }

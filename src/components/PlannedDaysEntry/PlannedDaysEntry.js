@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import Button from '../Button/Button'
-import MealEntry from '../MealsEntry/MealsEntry'
+import MealEntry from '../MealEntry/MealEntry'
 import DateEntry from '../DateEntry/DateEntry'
 
 export default function PlannedDaysEntry({
