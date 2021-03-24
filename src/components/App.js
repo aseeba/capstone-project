@@ -43,7 +43,14 @@ export default function App() {
             plannedDayNumber={plannedDayNumber}
             setPlannedDayNumber={setPlannedDayNumber}
           />
-          <Button onClick={backToPlanPage}> ★ &nbsp; Neuer Tag &nbsp; ★</Button>
+          <Button
+            onClick={console.log(
+              mealList.find(meal => meal.date === '2021-03-26')
+            )}
+          >
+            {' '}
+            ★ &nbsp; Neuer Tag &nbsp; ★
+          </Button>
         </NextMealsWrapper>
       )}
       {currentPage === 'PlannedDaysPage' && (
@@ -61,12 +68,6 @@ export default function App() {
   )
 
   function planMeal(newMeal) {
-    /* Ich frage ob *mealList* noch der leere Array vom Anfang (useState ganz oben) ist.
-    Wenn ja, soll nur ein neuer Array erstellt werden,
-    der als erstes und einziges Objekt *newMeal* hat.
-    Wenn schon Elemente in *mealList* vorhanden sind,
-    soll er die zuerst in das neue Array spreaden
-    und dann am Ende das Objekt aus *newMeal* einfügen */
     setMealList(mealList ? [...mealList, newMeal] : [newMeal])
   }
 

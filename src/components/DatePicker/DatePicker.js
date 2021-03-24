@@ -15,6 +15,7 @@ export default function Date({
         <CalendarIcon />
         <DateInput
           type="date"
+          id="date-input"
           placeholder={placeholder}
           name={name}
           autoFocus={autoFocus}

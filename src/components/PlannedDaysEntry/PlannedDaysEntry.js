@@ -15,7 +15,7 @@ export default function PlannedDaysEntry({
         <PlannedDay key={mealList.date}>
           <DateEntry mealList={mealList} />
           <MealEntry mealList={mealList} showPlannedDays={showPlannedDays} />
-          <Button onClick={backToPlanPage}> ★ &nbsp; Neuer Tag</Button>
+          <Button onClick={backToPlanPage}> ★ &nbsp; Neuer Tag &nbsp; ★</Button>
         </PlannedDay>
       ))}
     </PlannedDayWrapper>

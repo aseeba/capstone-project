@@ -3,34 +3,54 @@ import Button from '../Button/Button'
 
 export default function DateEntry({
   mealList,
-  dailyPlan,
-  showPlannedDays,
   setPlannedDayNumber,
   plannedDayNumber,
 }) {
-  function forth() {
-    setPlannedDayNumber(prevState => prevState + 1)
-  }
-  function back() {
-    setPlannedDayNumber(prevState => prevState - 1)
-  }
+  // const [dateStatus, setDateStatus] = useState(date)
+
+  // const getDateStatus(dateStatus) =
+  //   setDateStatus()
+  //   console.log(DateIsToday)
+
   return (
     <DateEntryWrapper>
       <Button onClick={plannedDayNumber > 0 ? back : undefined}>◀︎</Button>
-      {/*  weil *mealList* nun kein einfacher Array mehr ist,
-      sondern ein Array bestehend aus Objekten,
-      müssen wir uns hier zunächst für ein Objekt entscheiden,
-      das wir uns vornehmen und DAraus dann date entnehmen.
-      Das mache ich per *BracketNotation* und nehme einfach mal das älteste,
-      darum setze ich als Initial State 0. */}
       <Day>{mealList[plannedDayNumber].date}</Day>
       <Button
-        onClick={mealList.length > plannedDayNumber + 1 ? forth : undefined}
+        onClick={mealList.length > plannedDayNumber + 1 ? next : undefined}
       >
         ▶︎
       </Button>
     </DateEntryWrapper>
   )
+
+  // function compareDates () {
+  //   const date = mealList.date
+  //   const inputDate = new Date(date)
+  //   const currDate = new Date()
+
+  // function DateIsToday() {
+  //   inputDate.toDateString() === currDate.toDateString()
+  //   return <Day>HEUTE</Day>
+  // }
+
+  // function DateIsTomorrow() {
+  //   inputDate.toDateString() === currDate.toDateString() + 1
+  //   return <Day>MORGEN</Day>
+  // }
+
+  // function DateIsYesterday() {
+  //   inputDate.toDateString() === currDate.toDateString() - 1
+  //   return <Day>GESTERN</Day>
+  // }}
+
+  function next() {
+    setPlannedDayNumber(prevState => prevState + 1)
+  }
+
+  function back() {
+    setPlannedDayNumber(prevState => prevState - 1)
+  }
 }
 
 const DateEntryWrapper = styled.section`

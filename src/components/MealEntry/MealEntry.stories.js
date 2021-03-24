@@ -1,5 +1,5 @@
 import React from 'react'
-import MealEntry from './MealsEntry'
+import MealEntry from './MealEntry'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
