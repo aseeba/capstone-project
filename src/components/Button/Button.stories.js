@@ -10,6 +10,6 @@ const Template = args => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  buttonText: 'Primary Button',
+  title: 'Primary Button',
   isActive: false,
 }

@@ -10,9 +10,9 @@ export default function DateEntry({ date }) {
 
   return (
     <DateEntryWrapper>
-      <Button>◀︎</Button>
+      <Button title="back-btn">◀︎</Button>
       <Day>{date}</Day>
-      <Button>▶︎</Button>
+      <Button title="forward-btn">▶︎</Button>
     </DateEntryWrapper>
   )
 

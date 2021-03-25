@@ -20,7 +20,7 @@ export default function NextMealsPage({ mealList }) {
           />
         </EntryWrapper>
       ))}
-      <Button as={NavLink} exakt to="/">
+      <Button as={NavLink} exakt to="/" title="new-btn">
         ★&nbsp; Neuer Tag &nbsp;★
       </Button>
     </NextMealsWrapper>

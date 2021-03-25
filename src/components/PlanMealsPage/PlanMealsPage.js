@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import MealForm from '../MealForm/MealForm'
 
-export default function PlanMealsPage({ planMeal }) {
+export default function PlanMealsPage({ planMeal, handleValueChange }) {
   return (
     <PlanMealsWrapper>
       <Heading>Was möchte ich essen?</Heading>

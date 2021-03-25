@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-const Button = styled.button`
+export default styled.button`
   padding: 10px 15px;
   border-radius: 8px;
   background-color: var(--color-green);
@@ -20,8 +20,8 @@ const Button = styled.button`
     outline: none;
     border: 1px var(--color-darkgreen);
     box-shadow: var(--box-shadow);
-    &.disabled {
-    }
+  }
+  &.disabled {
+    background-color: var(--color-green-disabled);
   }
 `
-export default Button

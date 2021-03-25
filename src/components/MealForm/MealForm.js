@@ -15,7 +15,7 @@ export default function MealForm({ onPlanMeal }) {
 
   return (
     <CreateDaily>
-      <MealFormWrapper onChange={handleValueChange} onSubmit={handleSubmit}>
+      <MealFormWrapper onSubmit={handleSubmit} onChange={handleValueChange}>
         <Date
           labelText="Datum:"
           name="date"
@@ -44,7 +44,13 @@ export default function MealForm({ onPlanMeal }) {
           name="snack"
           placeholder="z. B. Joghurt"
         />
-        <Button as={NavLink} exakt to="/NextMeals" disabled={!mealListValue}>
+        <Button
+          as={NavLink}
+          exakt
+          to="/NextMeals"
+          title="submit-btn"
+          disabled={!mealListValue}
+        >
           ✔︎ &nbsp; Speichern
         </Button>
       </MealFormWrapper>

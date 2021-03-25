@@ -1,12 +1,6 @@
 import styled from 'styled-components/macro'
 
-export default function Input({
-  labelText,
-  placeholder,
-  name,
-  mealListValue,
-  handleValueChange,
-}) {
+export default function Input({ labelText, placeholder, name, mealListValue }) {
   return (
     <Label htmlfor="">
       {labelText}
