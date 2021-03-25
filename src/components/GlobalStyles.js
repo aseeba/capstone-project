@@ -17,15 +17,6 @@ export default createGlobalStyle`
     --box-shadow: 0 0 10px 1px var(--color-light-bluegrey);
     --border-bottom: 5px solid var(--color-green);
     --section-margin: 30px 0 30px 0;
-
-    /* Color-Setup-Green:
-    --color-yellow-green: rgb(219,242,93);
-    --color-limegreen: rgb(119,172,40);
-    --color-green: rgba(164,199,67);
-    --color-darkgreen: rgb(79,115,27);
-    --color-gradient-green: linear-gradient(0deg, var(--color-limegreen) 0%, var(--color-green) 100%); 
-    --color-tansparent-yellow-green: rgb(219,242,93,0.5);
-    --color-lightgrey: rgb(226,228,231);  */
   }
   
   * {
@@ -39,11 +30,10 @@ export default createGlobalStyle`
     font-size: 112.5%;
     font-weight: 100;
     line-height: 1.5;
-    background: var(--color-bluegreen);
+    background: var(--color-green);
     background: var(--color-gradient-green);
     background: var(--color-webkit-gradient-green);
-    /* background: var(--color-gradient-green); */
-    
+    background-attachment: fixed;
   }
 
   input, textarea {
