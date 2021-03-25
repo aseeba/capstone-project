@@ -1,11 +1,12 @@
 import styled from 'styled-components/macro'
 import React from 'react'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import Input from '../Input/Input'
 import Date from '../DatePicker/DatePicker'
 import Button from '../Button/Button'
 
-export default function MealForm({ onPlanMeal, onNavigate }) {
+export default function MealForm({ onPlanMeal }) {
   const [mealListValue, setmealListValue] = useState('')
 
   const handleValueChange = event => {
@@ -43,7 +44,9 @@ export default function MealForm({ onPlanMeal, onNavigate }) {
           name="snack"
           placeholder="z. B. Joghurt"
         />
-        <Button disabled={!mealListValue}>✔︎ &nbsp; Speichern</Button>
+        <Button as={NavLink} exakt to="/NextMeals" disabled={!mealListValue}>
+          ✔︎ &nbsp; Speichern
+        </Button>
       </MealFormWrapper>
     </CreateDaily>
   )
@@ -62,7 +65,6 @@ export default function MealForm({ onPlanMeal, onNavigate }) {
     })
     form.reset()
     date.focus()
-    onNavigate('NextMealsPage')
 
     return form
   }
