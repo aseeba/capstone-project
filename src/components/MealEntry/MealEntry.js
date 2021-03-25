@@ -1,25 +1,25 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function MealEntry({ mealList, plannedDayNumber }) {
+export default function MealEntry({ breakfast, lunch, dinner, snack }) {
   return (
     <MealEntryWrapper>
       <MealGroup>
         <MealDescr>
           Frühstück:
-          <Meal>{mealList[plannedDayNumber].breakfast}</Meal>
+          <Meal>{breakfast}</Meal>
         </MealDescr>
         <MealDescr>
           Mittagessen:
-          <Meal>{mealList[plannedDayNumber].lunch}</Meal>
+          <Meal>{lunch}</Meal>
         </MealDescr>
         <MealDescr>
           Abendessen:
-          <Meal>{mealList[plannedDayNumber].dinner}</Meal>
+          <Meal>{dinner}</Meal>
         </MealDescr>
         <MealDescr>
           Snack:
-          <Meal>{mealList[plannedDayNumber].snack}</Meal>
+          <Meal>{snack}</Meal>
         </MealDescr>
       </MealGroup>
     </MealEntryWrapper>

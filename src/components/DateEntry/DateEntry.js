@@ -1,11 +1,7 @@
 import styled from 'styled-components/macro'
 import Button from '../Button/Button'
 
-export default function DateEntry({
-  mealList,
-  setPlannedDayNumber,
-  plannedDayNumber,
-}) {
+export default function DateEntry({ date }) {
   // const [dateStatus, setDateStatus] = useState(date)
 
   // const getDateStatus(dateStatus) =
@@ -14,13 +10,9 @@ export default function DateEntry({
 
   return (
     <DateEntryWrapper>
-      <Button onClick={plannedDayNumber > 0 ? back : undefined}>◀︎</Button>
-      <Day>{mealList[plannedDayNumber].date}</Day>
-      <Button
-        onClick={mealList.length > plannedDayNumber + 1 ? next : undefined}
-      >
-        ▶︎
-      </Button>
+      <Button>◀︎</Button>
+      <Day>{date}</Day>
+      <Button>▶︎</Button>
     </DateEntryWrapper>
   )
 
@@ -44,13 +36,13 @@ export default function DateEntry({
   //   return <Day>GESTERN</Day>
   // }}
 
-  function next() {
-    setPlannedDayNumber(prevState => prevState + 1)
-  }
+  // function next() {
+  //   setPlannedDayNumber(prevState => prevState + 1)
+  // }
 
-  function back() {
-    setPlannedDayNumber(prevState => prevState - 1)
-  }
+  // function back() {
+  //   setPlannedDayNumber(prevState => prevState - 1)
+  // }
 }
 
 const DateEntryWrapper = styled.section`
