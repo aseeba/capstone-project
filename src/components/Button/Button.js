@@ -16,12 +16,13 @@ export default styled.button`
   font-family: inherit;
   font-weight: 600;
   margin-top: 20px;
-  &.active {
+  &:active {
     outline: none;
     border: 1px var(--color-darkgreen);
     box-shadow: var(--box-shadow);
   }
-  &.disabled {
-    background-color: var(--color-green-disabled);
+  &:disabled {
+    background-color: var(--color-green);
+    opacity: 0.7;
   }
 `

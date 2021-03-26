@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import PlanMealsPage from './PlanMealsPage/PlanMealsPage'
 import NextMealsPage from './NextMealsPage/NextMealsPage'
-import loadFromLocal from '../lib/LoadFromLocal'
+import loadFromLocal from '../lib/loadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
 
 export default function App() {
@@ -17,12 +17,9 @@ export default function App() {
     <AppLayout>
       <Switch>
         <Route exact path="/">
-          <PlanMealsPage
-            onPlanMeal={planMeal}
-            mealList={mealList}
-          ></PlanMealsPage>
+          <PlanMealsPage onPlanMeal={planMeal}></PlanMealsPage>
         </Route>
-        <Route path="/NextMeals">
+        <Route path="/nextmeals">
           <NextMealsPage mealList={mealList}></NextMealsPage>
         </Route>
       </Switch>
@@ -35,7 +32,7 @@ export default function App() {
       const index = mealList.indexOf(existEntry)
       setMealList([
         ...mealList.slice(0, index),
-        { newMeal },
+        { ...newMeal },
         ...mealList.slice(index + 1),
       ])
     } else {

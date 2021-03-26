@@ -1,21 +1,29 @@
 import styled from 'styled-components/macro'
 import React from 'react'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Input from '../Input/Input'
 import Date from '../DatePicker/DatePicker'
 import Button from '../Button/Button'
 
 export default function MealForm({ onPlanMeal }) {
-  const [mealListValue, setmealListValue] = useState('')
-
+  const [mealListValue, setMealListValue] = useState({
+    breakfast: '',
+    lunch: '',
+    dinner: '',
+    snakc: '',
+  })
+  const { push } = useHistory()
   const handleValueChange = event => {
-    setmealListValue(event.target.value)
+    setMealListValue({
+      ...mealListValue,
+      [event.target.name]: event.target.value,
+    })
   }
 
   return (
     <CreateDaily>
-      <MealFormWrapper onSubmit={handleSubmit} onChange={handleValueChange}>
+      <MealFormWrapper onSubmit={handleSubmit}>
         <Date
           labelText="Datum:"
           name="date"
@@ -24,33 +32,35 @@ export default function MealForm({ onPlanMeal }) {
           required={true}
         />
         <Input
+          onChange={handleValueChange}
+          mealListValue={mealListValue.breakfast}
           labelText="Frühstück:"
           name="breakfast"
           placeholder="z. B. Himbeer-Kokos-Smoothie"
         />
         <Input
+          onChange={handleValueChange}
+          mealListValue={mealListValue.lunch}
           labelText="Mittagessen:"
           name="lunch"
           placeholder="z. B.
           Chicken-Fajita-Pfanne"
         />
         <Input
+          onChange={handleValueChange}
+          mealListValue={mealListValue.dinner}
           labelText="Abendessen:"
           name="dinner"
           placeholder="z. B. Hähnchenspieß auf buntem Gartensalat"
         />
         <Input
+          onChange={handleValueChange}
+          mealListValue={mealListValue.snack}
           labelText="Zwischenmahlzeit:"
           name="snack"
           placeholder="z. B. Joghurt"
         />
-        <Button
-          as={NavLink}
-          exakt
-          to="/NextMeals"
-          title="submit-btn"
-          disabled={!mealListValue}
-        >
+        <Button title="submit-btn" disabled={mealListValue === ''}>
           ✔︎ &nbsp; Speichern
         </Button>
       </MealFormWrapper>
@@ -59,16 +69,11 @@ export default function MealForm({ onPlanMeal }) {
 
   function handleSubmit(event) {
     const form = event.target
-    const { breakfast, lunch, dinner, snack, date } = form.elements
+    const { date } = form.elements
     event.preventDefault()
 
-    onPlanMeal({
-      date: date.value,
-      breakfast: breakfast.value,
-      lunch: lunch.value,
-      dinner: dinner.value,
-      snack: snack.value,
-    })
+    onPlanMeal({ ...mealListValue, date: date.value })
+    push('/nextmeals')
     form.reset()
     date.focus()
 

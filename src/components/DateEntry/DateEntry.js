@@ -1,48 +1,40 @@
 import styled from 'styled-components/macro'
 import Button from '../Button/Button'
 
-export default function DateEntry({ date }) {
-  // const [dateStatus, setDateStatus] = useState(date)
-
-  // const getDateStatus(dateStatus) =
-  //   setDateStatus()
-  //   console.log(DateIsToday)
+export default function DateEntry({
+  date,
+  onPreviousDay,
+  onNextDay,
+  mealList,
+  daily,
+}) {
+  const getToday = new Date()
+  const today = getToday.toISOString().split('T')[0]
+  // const tomorrow = getToday
+  //   .setDate(getToday.getDate() + 1)
+  //   .toISOString()
+  //   .split('T')[0]
+  // const yesterday = getToday
+  //   .setDate(getToday.getDate() - 1)
+  //   .toISOString()
+  //   .split('T')[0]
 
   return (
     <DateEntryWrapper>
-      <Button title="back-btn">◀︎</Button>
-      <Day>{date}</Day>
-      <Button title="forward-btn">▶︎</Button>
+      <Button title="back-btn" disabled={daily === 0} onClick={onPreviousDay}>
+        ◀︎
+      </Button>
+      <Day>{date === today ? 'HEUTE' : date}</Day>
+
+      <Button
+        title="forward-btn"
+        disabled={daily === mealList.length - 1}
+        onClick={onNextDay}
+      >
+        ▶︎
+      </Button>
     </DateEntryWrapper>
   )
-
-  // function compareDates () {
-  //   const date = mealList.date
-  //   const inputDate = new Date(date)
-  //   const currDate = new Date()
-
-  // function DateIsToday() {
-  //   inputDate.toDateString() === currDate.toDateString()
-  //   return <Day>HEUTE</Day>
-  // }
-
-  // function DateIsTomorrow() {
-  //   inputDate.toDateString() === currDate.toDateString() + 1
-  //   return <Day>MORGEN</Day>
-  // }
-
-  // function DateIsYesterday() {
-  //   inputDate.toDateString() === currDate.toDateString() - 1
-  //   return <Day>GESTERN</Day>
-  // }}
-
-  // function next() {
-  //   setPlannedDayNumber(prevState => prevState + 1)
-  // }
-
-  // function back() {
-  //   setPlannedDayNumber(prevState => prevState - 1)
-  // }
 }
 
 const DateEntryWrapper = styled.section`
