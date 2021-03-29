@@ -11,7 +11,7 @@ export default function DateEntry({
   const getToday = new Date()
   const today = getToday.toISOString().split('T')[0]
   // const tomorrow = getToday
-  //   .setDate(getToday.getDate() + 1)
+  //   .setDate(getToday + 1)
   //   .toISOString()
   //   .split('T')[0]
   // const yesterday = getToday
@@ -24,8 +24,16 @@ export default function DateEntry({
       <Button title="back-btn" disabled={daily === 0} onClick={onPreviousDay}>
         ◀︎
       </Button>
-      <Day>{date === today ? 'HEUTE' : date}</Day>
-
+      <Day>
+        {date === today ? 'HEUTE' : date}
+        {/* {date === today
+          ? 'HEUTE'
+          : date === tomorrow
+          ? 'MORGEN'
+          : today === yesterday
+          ? 'GESTERN'
+          : date} */}
+      </Day>
       <Button
         title="forward-btn"
         disabled={daily === mealList.length - 1}

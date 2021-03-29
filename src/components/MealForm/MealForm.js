@@ -11,16 +11,16 @@ export default function MealForm({ onPlanMeal }) {
     breakfast: '',
     lunch: '',
     dinner: '',
-    snakc: '',
+    snack: '',
   })
   const { push } = useHistory()
-  const handleValueChange = event => {
-    setMealListValue({
-      ...mealListValue,
-      [event.target.name]: event.target.value,
-    })
-  }
 
+  console.log(
+    mealListValue.breakfast.length,
+    mealListValue.lunch,
+    mealListValue.dinner,
+    mealListValue.snack
+  )
   return (
     <CreateDaily>
       <MealFormWrapper onSubmit={handleSubmit}>
@@ -33,14 +33,14 @@ export default function MealForm({ onPlanMeal }) {
         />
         <Input
           onChange={handleValueChange}
-          mealListValue={mealListValue.breakfast}
+          value={mealListValue.breakfast}
           labelText="Frühstück:"
           name="breakfast"
           placeholder="z. B. Himbeer-Kokos-Smoothie"
         />
         <Input
           onChange={handleValueChange}
-          mealListValue={mealListValue.lunch}
+          value={mealListValue.lunch}
           labelText="Mittagessen:"
           name="lunch"
           placeholder="z. B.
@@ -48,19 +48,27 @@ export default function MealForm({ onPlanMeal }) {
         />
         <Input
           onChange={handleValueChange}
-          mealListValue={mealListValue.dinner}
+          value={mealListValue.dinner}
           labelText="Abendessen:"
           name="dinner"
           placeholder="z. B. Hähnchenspieß auf buntem Gartensalat"
         />
         <Input
           onChange={handleValueChange}
-          mealListValue={mealListValue.snack}
+          value={mealListValue.snack}
           labelText="Zwischenmahlzeit:"
           name="snack"
           placeholder="z. B. Joghurt"
         />
-        <Button title="submit-btn" disabled={mealListValue === ''}>
+        <Button
+          title="submit-btn"
+          disabled={
+            mealListValue.breakfast.length < 2 &&
+            mealListValue.lunch.length < 2 &&
+            mealListValue.dinner.length < 2 &&
+            mealListValue.snack.length < 2
+          }
+        >
           ✔︎ &nbsp; Speichern
         </Button>
       </MealFormWrapper>
@@ -76,8 +84,14 @@ export default function MealForm({ onPlanMeal }) {
     push('/nextmeals')
     form.reset()
     date.focus()
-
     return form
+  }
+
+  function handleValueChange(event) {
+    setMealListValue({
+      ...mealListValue,
+      [event.target.name]: event.target.value,
+    })
   }
 }
 

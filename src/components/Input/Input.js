@@ -16,6 +16,7 @@ export default function Input({
         onChange={onChange}
         value={mealListValue}
         type="text"
+        pattern="^(?!\s*$).+"
         maxLength="80"
       ></MealInput>
     </Label>

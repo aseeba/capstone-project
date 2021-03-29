@@ -30,13 +30,17 @@ export default function App() {
     const existEntry = mealList?.find(meal => meal.date === newMeal.date)
     if (existEntry) {
       const index = mealList.indexOf(existEntry)
-      setMealList([
-        ...mealList.slice(0, index),
-        { ...newMeal },
-        ...mealList.slice(index + 1),
-      ])
+      setMealList(
+        [
+          ...mealList.slice(0, index),
+          { ...newMeal },
+          ...mealList.slice(index + 1),
+        ].sort((a, b) => a.date > b.date)
+      )
     } else {
-      setMealList(mealList ? [...mealList, newMeal] : [newMeal])
+      setMealList(mealList ? [newMeal, ...mealList] : [newMeal]).sort(
+        (a, b) => a.date > b.date
+      )
     }
   }
 }
