@@ -63,10 +63,10 @@ export default function MealForm({ onPlanMeal }) {
         <Button
           title="submit-btn"
           disabled={
-            mealListValue.breakfast.length < 2 &&
-            mealListValue.lunch.length < 2 &&
-            mealListValue.dinner.length < 2 &&
-            mealListValue.snack.length < 2
+            mealListValue.breakfast.length < 1 &&
+            mealListValue.lunch.length < 1 &&
+            mealListValue.dinner.length < 1 &&
+            mealListValue.snack.length < 1
           }
         >
           ✔︎ &nbsp; Speichern

@@ -38,8 +38,10 @@ export default function App() {
         ].sort((a, b) => a.date > b.date)
       )
     } else {
-      setMealList(mealList ? [newMeal, ...mealList] : [newMeal]).sort(
-        (a, b) => a.date > b.date
+      setMealList(
+        mealList
+          ? [newMeal, ...mealList].sort((a, b) => a.date > b.date)
+          : [newMeal].sort((a, b) => a.date > b.date)
       )
     }
   }
