@@ -11,13 +11,13 @@ export default function DateEntry({
   const getToday = new Date()
   const today = getToday.toISOString().split('T')[0]
 
-  console.log('Heute ist der: ' + today)
+  const getTomorrow = new Date()
+  getTomorrow.setDate(getToday.getDate() + 1)
+  const tomorrow = getTomorrow.toISOString().split('T')[0]
 
-  getToday.setDate(getToday.getDate() - 1)
-  console.log('Gestern war der: ' + getToday.toISOString().split('T')[0])
-
-  getToday.setDate(getToday.getDate() + 1)
-  console.log('Morgen ist der: ' + getToday.toISOString().split('T')[0])
+  const getYesterday = new Date()
+  getYesterday.setDate(getToday.getDate() - 1)
+  const yesterday = getYesterday.toISOString().split('T')[0]
 
   return (
     <DateEntryWrapper>
@@ -25,16 +25,13 @@ export default function DateEntry({
         ◀︎
       </Button>
       <Day>
-        {date === today ? 'HEUTE' : date}
-
-        {/* Hier habe ich versucht die Daten miteinander zu vergleichen und gegen Strings bspw. Morgen auszutauschen:
         {date === today
           ? 'HEUTE'
           : date === tomorrow
           ? 'MORGEN'
-          : today === yesterday
+          : date === yesterday
           ? 'GESTERN'
-          : date} */}
+          : date}
       </Day>
       <Button
         title="forward-btn"

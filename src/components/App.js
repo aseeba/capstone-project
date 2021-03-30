@@ -3,11 +3,12 @@ import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import PlanMealsPage from './PlanMealsPage/PlanMealsPage'
 import NextMealsPage from './NextMealsPage/NextMealsPage'
-import loadFromLocal from '../lib/loadFromLocal'
+import loadFromLocal from '../lib/LoadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
 
 export default function App() {
   const [mealList, setMealList] = useState(loadFromLocal('mealList'), [])
+  mealList.sort((a, b) => b.date < a.date)
 
   useEffect(() => {
     saveToLocal('mealList', mealList)
@@ -19,7 +20,7 @@ export default function App() {
         <Route exact path="/">
           <PlanMealsPage onPlanMeal={planMeal}></PlanMealsPage>
         </Route>
-        <Route path="/nextmeals">
+        <Route path="/next-meals">
           <NextMealsPage mealList={mealList}></NextMealsPage>
         </Route>
       </Switch>
@@ -30,19 +31,13 @@ export default function App() {
     const existEntry = mealList?.find(meal => meal.date === newMeal.date)
     if (existEntry) {
       const index = mealList.indexOf(existEntry)
-      setMealList(
-        [
-          ...mealList.slice(0, index),
-          { ...newMeal },
-          ...mealList.slice(index + 1),
-        ].sort((a, b) => a.date > b.date)
-      )
+      setMealList([
+        ...mealList.slice(0, index),
+        { ...newMeal },
+        ...mealList.slice(index + 1),
+      ])
     } else {
-      setMealList(
-        mealList
-          ? [newMeal, ...mealList].sort((a, b) => a.date > b.date)
-          : [newMeal].sort((a, b) => a.date > b.date)
-      )
+      setMealList(mealList ? [newMeal, ...mealList] : [newMeal])
     }
   }
 }

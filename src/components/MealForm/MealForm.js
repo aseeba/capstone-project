@@ -15,12 +15,6 @@ export default function MealForm({ onPlanMeal }) {
   })
   const { push } = useHistory()
 
-  console.log(
-    mealListValue.breakfast.length,
-    mealListValue.lunch,
-    mealListValue.dinner,
-    mealListValue.snack
-  )
   return (
     <CreateDaily>
       <MealFormWrapper onSubmit={handleSubmit}>
@@ -81,7 +75,7 @@ export default function MealForm({ onPlanMeal }) {
     event.preventDefault()
 
     onPlanMeal({ ...mealListValue, date: date.value })
-    push('/nextmeals')
+    push('/next-meals')
     form.reset()
     date.focus()
     return form
