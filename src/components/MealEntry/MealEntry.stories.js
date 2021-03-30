@@ -3,7 +3,7 @@ import MealEntry from './MealEntry'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Capstone Project/MealEntry',
+  title: 'Capstone Project/4-Meals',
   component: MealEntry,
   argTypes: {
     authorColor: { control: 'color' },

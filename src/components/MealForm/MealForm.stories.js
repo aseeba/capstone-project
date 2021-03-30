@@ -3,7 +3,7 @@ import React from 'react'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Capstone Project/MealForm',
+  title: 'Capstone Project/4-Meals',
   component: MealForm,
 }
 
