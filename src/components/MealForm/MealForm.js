@@ -7,7 +7,7 @@ import Date from '../DatePicker/DatePicker'
 import Button from '../Button/Button'
 
 export default function MealForm({ onPlanMeal }) {
-  const [mealListValue, setMealListValue] = useState({
+  const [inputValue, setInputValue] = useState({
     breakfast: '',
     lunch: '',
     dinner: '',
@@ -27,14 +27,14 @@ export default function MealForm({ onPlanMeal }) {
         />
         <Input
           onChange={handleValueChange}
-          value={mealListValue.breakfast}
+          value={inputValue.breakfast}
           labelText="Frühstück:"
           name="breakfast"
           placeholder="z. B. Himbeer-Kokos-Smoothie"
         />
         <Input
           onChange={handleValueChange}
-          value={mealListValue.lunch}
+          value={inputValue.lunch}
           labelText="Mittagessen:"
           name="lunch"
           placeholder="z. B.
@@ -42,14 +42,14 @@ export default function MealForm({ onPlanMeal }) {
         />
         <Input
           onChange={handleValueChange}
-          value={mealListValue.dinner}
+          value={inputValue.dinner}
           labelText="Abendessen:"
           name="dinner"
           placeholder="z. B. Hähnchenspieß auf buntem Gartensalat"
         />
         <Input
           onChange={handleValueChange}
-          value={mealListValue.snack}
+          value={inputValue.snack}
           labelText="Zwischenmahlzeit:"
           name="snack"
           placeholder="z. B. Joghurt"
@@ -57,10 +57,10 @@ export default function MealForm({ onPlanMeal }) {
         <Button
           title="submit-btn"
           disabled={
-            mealListValue.breakfast.length < 1 &&
-            mealListValue.lunch.length < 1 &&
-            mealListValue.dinner.length < 1 &&
-            mealListValue.snack.length < 1
+            inputValue.breakfast.length < 1 &&
+            inputValue.lunch.length < 1 &&
+            inputValue.dinner.length < 1 &&
+            inputValue.snack.length < 1
           }
         >
           ✔︎ &nbsp; Speichern
@@ -74,7 +74,7 @@ export default function MealForm({ onPlanMeal }) {
     const { date } = form.elements
     event.preventDefault()
 
-    onPlanMeal({ ...mealListValue, date: date.value })
+    onPlanMeal({ ...inputValue, date: date.value })
     push('/next-meals')
     form.reset()
     date.focus()
@@ -82,8 +82,8 @@ export default function MealForm({ onPlanMeal }) {
   }
 
   function handleValueChange(event) {
-    setMealListValue({
-      ...mealListValue,
+    setInputValue({
+      ...inputValue,
       [event.target.name]: event.target.value,
     })
   }

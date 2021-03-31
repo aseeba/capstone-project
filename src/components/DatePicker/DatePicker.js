@@ -20,7 +20,7 @@ export default function Date({
           name={name}
           autoFocus={autoFocus}
           required={required}
-        ></DateInput>
+        />
       </Label>
     </DateWrapper>
   )

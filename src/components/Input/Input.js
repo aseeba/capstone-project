@@ -18,7 +18,7 @@ export default function Input({
         type="text"
         pattern="^(?!\s*$).+"
         maxLength="80"
-      ></MealInput>
+      />
     </Label>
   )
 }
