@@ -23,6 +23,3 @@ const Template = args => (
 )
 
 export const MealEntryGroup = Template.bind({})
-MealEntryGroup.args = {
-  Text: 'Add a meal here',
-}

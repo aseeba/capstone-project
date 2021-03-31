@@ -12,7 +12,7 @@ const Template = args => (
     {...args}
     daily={[0]}
     mealList={{
-      date: '[0].2021-01-01',
+      date: '2021-01-01',
       breakfast: 'Smoothie',
       lunch: 'Salmon wrap',
       dinner: 'Scrambled eggs',

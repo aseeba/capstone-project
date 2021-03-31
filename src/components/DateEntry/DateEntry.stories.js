@@ -21,6 +21,3 @@ const Template = args => (
 )
 
 export const MealDateNavigation = Template.bind({})
-MealDateNavigation.args = {
-  autoFocus: true,
-}
