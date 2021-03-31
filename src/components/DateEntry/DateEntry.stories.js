@@ -10,7 +10,7 @@ export default {
 const Template = args => <DateEntry {...args} />
 export const MealDateNavigation = Template.bind({})
 MealDateNavigation.args = {
-  date: 2021 - 3 - 31,
+  date: '2021-03-31',
   mealList: {
     breakfast: 'Smoothie',
     lunch: 'Salmon wrap',

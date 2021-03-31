@@ -12,14 +12,16 @@ const Template = args => <NextMealsPage {...args} />
 export const NextMeals = Template.bind({})
 
 NextMeals.args = {
-  date: 2021 - 3 - 31,
-  mealList: {
-    breakfast: 'Smoothie',
-    lunch: 'Salmon wrap',
-    dinner: 'Scrambled eggs',
-    snack: 'Apple',
-  },
-  daily: 2,
+  mealList: [
+    {
+      date: '2021-03-31',
+      breakfast: 'Smoothie',
+      lunch: 'Salmon wrap',
+      dinner: 'Scrambled eggs',
+      snack: 'Apple',
+    },
+  ],
+  daily: 0,
   onPreviousDay: action('onPreviousDay'),
   onNextDay: action('onNextDay'),
 }
