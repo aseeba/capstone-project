@@ -91,6 +91,7 @@ export default function MealForm({ onPlanMeal }) {
 
 const CreateDaily = styled.section`
   display: grid;
+  z-index: 10;
 `
 
 const MealFormWrapper = styled.form`
