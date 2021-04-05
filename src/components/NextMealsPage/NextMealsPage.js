@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import DateEntry from '../DateEntry/DateEntry'
-import MealEntry from '../MealEntry/MealEntry'
+import MealEntry from '../MealsEntry/MealsEntry'
 import Button from '../Button/Button'
 
 export default function NextMealsPage({ mealList }) {

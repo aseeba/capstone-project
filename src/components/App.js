@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import LandingPage from './LandingPage/LandingPage'
 import PlanMealsPage from './PlanMealsPage/PlanMealsPage'
 import NextMealsPage from './NextMealsPage/NextMealsPage'
 import loadFromLocal from '../lib/LoadFromLocal'
@@ -8,6 +9,11 @@ import saveToLocal from '../lib/saveToLocal'
 
 export default function App() {
   const [mealList, setMealList] = useState(loadFromLocal('mealList'), [])
+  const [loadingLandingPage, setIsLoadingLandingPage] = useState(false)
+  window.setTimeout(() => {
+    setIsLoadingLandingPage(true)
+  }, 2000)
+
   mealList.sort((a, b) => b.date < a.date)
 
   useEffect(() => {
@@ -16,6 +22,7 @@ export default function App() {
 
   return (
     <AppLayout>
+      <LandingPage loadingPage={loadingLandingPage} />
       <Switch>
         <Route exact path="/">
           <PlanMealsPage onPlanMeal={planMeal}></PlanMealsPage>
@@ -46,4 +53,5 @@ const AppLayout = styled.div`
   display: grid;
   padding: 20px;
   height: auto;
+  position: relative;
 `
