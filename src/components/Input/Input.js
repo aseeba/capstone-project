@@ -30,7 +30,7 @@ const Label = styled.label`
   height: 100%;
   text-align: center;
   font-size: 0.7em;
-  z-index: 100;
+  z-index: 10;
 `
 const MealInput = styled.input`
   border: none;

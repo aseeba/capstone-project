@@ -57,5 +57,5 @@ const Heading = styled.h1`
   text-transform: uppercase;
   text-align: center;
   color: white;
-  margin: 0;
+  border-bottom: 1px solid var(--color-green);
 `

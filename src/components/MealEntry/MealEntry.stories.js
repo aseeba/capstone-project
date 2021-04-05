@@ -15,7 +15,7 @@ const Template = args => <MealEntry {...args} />
 export const MealEntryGroup = Template.bind({})
 
 MealEntryGroup.args = {
-  date: 2021 - 0 - 21,
+  date: '2021-03-31',
   mealList: {
     breakfast: 'Smoothie',
     lunch: 'Salmon wrap',
