@@ -1,23 +1,28 @@
 import styled from 'styled-components/macro'
 
 export default styled.button`
-  margin-top: 20px;
-  padding: 15px 45px;
-  border-radius: 35px;
-  border-color: 2px white;
-  background-color: var(--color-yellow-green);
-  color: var(--color-darkgreen);
-  font-weight: ${props => (props.isActive ? '600' : '400')};
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: var(--color-green);
   border: none;
+  box-shadow: var(--box-shadow);
+  color: white;
+  font-weight: ${props => (props.isActive ? '600' : '400')};
   text-decoration: none;
   text-align: center;
+  vertical-align: middle;
   text-transform: uppercase;
-  font-size: ${props => (props.isActive ? '0.8em' : 'em')};
+  font-size: ${props => (props.isActive ? '0.9em' : '0.8em')};
   font-family: inherit;
   font-weight: 600;
-
-  &.active {
-    border-color: 1px var(--color-darkgreen);
-    box-shadow: 0 0 5px 1px var(--color-darkgreen);
+  margin-top: 20px;
+  &:active {
+    outline: none;
+    border: 1px var(--color-darkgreen);
+    box-shadow: var(--box-shadow);
+  }
+  &:disabled {
+    background-color: var(--color-green);
+    opacity: 0.7;
   }
 `

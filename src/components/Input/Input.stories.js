@@ -8,8 +8,8 @@ export default {
 
 const Template = args => <Input {...args} />
 
-export const InputField = Template.bind({})
-InputField.args = {
-  labelText: 'labelText',
+export const MealInput = Template.bind({})
+MealInput.args = {
+  labelText: 'Breakfast:',
   placeholder: 'Input field with placeholder text',
 }

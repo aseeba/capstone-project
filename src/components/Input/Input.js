@@ -4,9 +4,8 @@ export default function Input({
   labelText,
   placeholder,
   name,
-  autoFocus,
   mealListValue,
-  handleValueChange,
+  onChange,
 }) {
   return (
     <Label htmlfor="">
@@ -14,33 +13,44 @@ export default function Input({
       <MealInput
         name={name}
         placeholder={placeholder}
-        autoFocus={autoFocus}
-        type="text"
-        maxLength="80"
+        onChange={onChange}
         value={mealListValue}
+        type="text"
+        pattern="^(?!\s*$).+"
+        maxLength="80"
       />
     </Label>
   )
 }
 
 const Label = styled.label`
+  margin-bottom: 10px;
   display: grid;
-  gap: 4px;
   color: white;
+  height: 100%;
   text-align: center;
+  font-size: 0.7em;
+  z-index: 10;
 `
 const MealInput = styled.input`
-  margin-bottom: 20px;
   border: none;
-  border-radius: 30px;
-  padding: 10px;
+  border-radius: 8px;
+  padding: 5px;
   background-color: var(--color-transparent-white);
-  color: var(--color-darkgreen);
-  ::placeholder {
-    color: var(--color-darkgreen);
-    text-align: center;
-    font-size: 0.8em;
-  }
+  color: var(--color-dark-bluegrey);
+  border-bottom: 3px solid var(--color-green);
+  outline: none;
   text-align: center;
-  font-size: 0.8em;
+  z-index: 0;
+  ::placeholder {
+    color: var(--color-dark-bluegrey);
+    text-align: center;
+    font-size: 0.9em;
+    opacity: 0.6;
+  }
+  &:focus {
+    outline: none;
+    border-bottom: var(--border-bottom);
+    box-shadow: var(--box-shadow);
+  }
 `

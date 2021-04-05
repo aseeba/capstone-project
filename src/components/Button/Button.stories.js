@@ -6,10 +6,14 @@ export default {
   component: Button,
 }
 
-const Template = args => <Button {...args} />
+const Template = args => <Button {...args}>★&nbsp; Button &nbsp;★</Button>
 
 export const Primary = Template.bind({})
 Primary.args = {
-  buttonText: 'Primary Button',
-  isActive: false,
+  active: true,
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  disabled: true,
 }

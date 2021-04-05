@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import MealForm from './MealForm/MealForm'
-import Button from './Button/Button'
-import MealEntry from './MealsEntry/MealsEntry'
-
+import PlanMealsPage from './PlanMealsPage/PlanMealsPage'
+import NextMealsPage from './NextMealsPage/NextMealsPage'
 import loadFromLocal from '../lib/LoadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
 
 export default function App() {
-  const [mealList, setMealList] = useState(loadFromLocal('mealList') ?? {})
-  const [currentPage, setCurrentPage] = useState('PlanMealsPage')
+  const [mealList, setMealList] = useState(loadFromLocal('mealList'), [])
+  mealList.sort((a, b) => b.date < a.date)
 
   useEffect(() => {
     saveToLocal('mealList', mealList)
@@ -17,29 +16,29 @@ export default function App() {
 
   return (
     <AppLayout>
-      {currentPage === 'PlanMealsPage' && (
-        <div>
-          <Heading>Was esse ich morgen?</Heading>
-          <MealForm onPlanMeal={planMeal} onNavigate={setCurrentPage} />
-        </div>
-      )}
-
-      {currentPage === 'NextMealsPage' && (
-        <NextMealsWrapper>
-          <Heading>Morgen esse ich:</Heading>
-          <MealEntry mealList={mealList} />
-          <Button onClick={backToPlanPage}>Neuer Tag</Button>
-        </NextMealsWrapper>
-      )}
+      <Switch>
+        <Route exact path="/">
+          <PlanMealsPage onPlanMeal={planMeal}></PlanMealsPage>
+        </Route>
+        <Route path="/next-meals">
+          <NextMealsPage mealList={mealList}></NextMealsPage>
+        </Route>
+      </Switch>
     </AppLayout>
   )
 
-  function planMeal(newMeals) {
-    setMealList(newMeals)
-  }
-
-  function backToPlanPage() {
-    setCurrentPage('PlanMealsPage')
+  function planMeal(newMeal) {
+    const existEntry = mealList?.find(meal => meal.date === newMeal.date)
+    if (existEntry) {
+      const index = mealList.indexOf(existEntry)
+      setMealList([
+        ...mealList.slice(0, index),
+        { ...newMeal },
+        ...mealList.slice(index + 1),
+      ])
+    } else {
+      setMealList(mealList ? [newMeal, ...mealList] : [newMeal])
+    }
   }
 }
 
@@ -47,14 +46,4 @@ const AppLayout = styled.div`
   display: grid;
   padding: 20px;
   height: auto;
-`
-const Heading = styled.h1`
-  font-size: 1.4em;
-  text-align: center;
-  color: var(--color-darkgreen);
-  margin-bottom: 30px;
-`
-const NextMealsWrapper = styled.div`
-  display: grid;
-  gap: 10px;
 `
