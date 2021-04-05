@@ -17,7 +17,7 @@ const Heading = styled.h1`
   text-align: center;
   color: white;
   margin: 0;
-  margin-top: 10px;
+  margin: 10px 0;
   border-bottom: 1px solid var(--color-green);
 `
 const PlanMealsWrapper = styled.div`
