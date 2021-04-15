@@ -37,7 +37,7 @@
   "bugs": {
     "url": "https://github.com:AnjaSeeba/issues"
   },
-  "homepage": "https://github.com:AnjaSeeba/capstone-project.git#readme",
+  "homepage": "https://github.com/aseeba/capstone-project#readme",
   "description": "",
   "eslintConfig": {
     "extends": [
