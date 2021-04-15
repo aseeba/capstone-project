@@ -14,7 +14,7 @@ export default function App() {
     setIsLoadingLandingPage(true)
   }, 2000)
 
-  mealList.sort((a, b) => b.date < a.date)
+  // mealList.sort((a, b) => b.date < a.date)
 
   useEffect(() => {
     saveToLocal('mealList', mealList)

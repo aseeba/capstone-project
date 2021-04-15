@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/user-event": "^12.8.1",
+    "eslint": "^7.24.0",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -24,6 +25,20 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
+
+  "keywords": [],
+  "author": "Anja Seeba <ahoi@achtsam.media>",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:aseeba/capstone-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com:AnjaSeeba/issues"
+  },
+  "homepage": "https://github.com:AnjaSeeba/capstone-project.git#readme",
+  "description": "",
   "eslintConfig": {
     "extends": [
       "react-app",
