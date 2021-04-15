@@ -22,16 +22,14 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "keywords": [],
   "author": "Anja Seeba <ahoi@achtsam.media>",
   "license": "ISC",
-  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:aseeba/capstone-project.git"
+    "url": "git+https://github.com:aseeba/capstone-project.git"
   },
   "bugs": {
-    "url": "https://github.com:AnjaSeeba/issues"
+    "url": "https://github.com:aseeba/capstone-project/issues"
   },
   "homepage": "https://github.com/aseeba/capstone-project#readme",
   "description": "",
