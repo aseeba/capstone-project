@@ -1,11 +1,10 @@
 # gusto – eating with plan
 
-I am happy to show my first small app, which I programmed at the end of the web development bootcamp at **[neue fische](https://www.neuefische.de/weiterbildung/web-development)** – school and pool for digital talents as a ✨✨✨ **digital journeyman's project** ✨✨✨
+I am happy to show my first small app, which I programmed at the end of the web development bootcamp at **[neue fische](https://www.neuefische.de/weiterbildung/web-development)** – school and pool for digital talents as a ✨✨ **digital journeyman's project** ✨✨
 
-### Your simple 🥗 meal planner 🥗 app
+### Your simple 🥗 meal planner app 🥗
 
 With gusto, more plan comes into your daily meals and thus (almost) always offers an answer to the question: "What's for dinner?". With a little gusto planning, it's easier to: </br>
-
 
 ⭐️ Reach weight goals</br>
 ⭐️ Add variety to your diet</br>
@@ -13,7 +12,8 @@ With gusto, more plan comes into your daily meals and thus (almost) always offer
 
 ---
 
-## Language & Tools: 
+## Language & Tools
+
 Javascript Create-React-App
 
 ---
