@@ -8,7 +8,7 @@ import saveToLocal from '../lib/saveToLocal'
 
 export default function App() {
   const [mealList, setMealList] = useState(loadFromLocal('mealList'), [])
-  mealList.sort((a, b) => b.date < a.date)
+  // mealList.sort((a, b) => b.date < a.date)
 
   useEffect(() => {
     saveToLocal('mealList', mealList)
