@@ -14,7 +14,18 @@ With gusto, more plan comes into your daily meals and thus (almost) always offer
 
 ## Language & Tools
 
-Javascript Create-React-App
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and contains all the appropriate scripts.
+
+    React
+    React-Router
+    Styled Components
+    Storybook
+    PropTypes
+    Node.js
+    Jest
+    Testing Library
+    Cypress (still in progress)
+
 
 ---
 
