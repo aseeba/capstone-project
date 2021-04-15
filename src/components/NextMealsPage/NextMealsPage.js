@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import DateEntry from '../DateEntry/DateEntry'
-import MealEntry from '../MealEntry/MealEntry'
+import MealEntry from '../MealsEntry/MealsEntry'
 import Button from '../Button/Button'
 
 export default function NextMealsPage({ mealList }) {
@@ -57,5 +57,7 @@ const Heading = styled.h1`
   text-transform: uppercase;
   text-align: center;
   color: white;
+  margin: 0;
+  margin: 10px 0;
   border-bottom: 1px solid var(--color-green);
 `

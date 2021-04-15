@@ -60,7 +60,7 @@ const DateInput = styled.input`
   }
   text-align: center;
   font-size: 1em;
-  z-index: 10;
+  z-index: 50;
 `
 
 const CalendarIcon = styled.span`

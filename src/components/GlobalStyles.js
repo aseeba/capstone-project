@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components'
 export default createGlobalStyle`
   :root {
     --color-green: rgb(56,239,125);
-    --color-green-disabled: rgb(166,249,197);
     --color-dark-green: rgb(48,200,105);
     --color-bluegreen: rgb(17,153,142);
     --color-dark-bluegreen: rgb(16,120,111);
@@ -27,6 +26,7 @@ export default createGlobalStyle`
   body {
     margin: 0 auto;
     height: 100vh;
+    width: 100vw;
     font-family: 'Poppins', sans-serif;
     font-size: 112.5%;
     font-weight: 100;
